@@ -1,0 +1,12 @@
+<div class="container shadow bg-white rounded p-4 text-center my-5 mb-4">
+<h1><%= @activity.name %></h1>
+<p>ça m'énerve</p>
+<h2><%= @activity.items_id %></h2>
+
+<h2><%= @activity.created_at.strftime("%d %b %Y") %></h2>
+
+<%= link_to "Destroy", activity_path(@activity.id), method: :delete, class: "btn
+btn-danger" %>
+<%= link_to "Edit", edit_activity_path(@activity.id), class: "btn
+btn-danger" %>
+</div>

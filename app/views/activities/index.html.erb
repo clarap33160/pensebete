@@ -1,0 +1,22 @@
+<div class="text-center">
+<h1>Mes activités</h1>
+</div>
+<div class="container">
+<div class="row">
+<% @activities.each do |activity| %>
+<div class="col-12">
+<div class="shadow bg-white rounded p-4 d-flex justify-content-between">
+<h2><%= activity.name %></h2>
+<p><b><%= activity.created_at.strftime("%D") %></b></p>
+</div>
+</div>
+<%= link_to "voir activité", activity_path(activity.id) %>
+<% end %>
+<%= link_to "Ajouter activité", new_activity_path %>
+
+
+<%= link_to "Ajouter item", new_item_path %>
+  <p>Pour faire du txt</p>
+<%= link_to "sortir", destroy_user_session_path, method: :delete %>
+</div>
+</div>
