@@ -1,7 +1,7 @@
 class ActivitiesController < ApplicationController
 
   def index
-    @activities = Activity.all
+    @activities = current_user.activities if current_user
   end
 
   def show
@@ -14,6 +14,7 @@ class ActivitiesController < ApplicationController
 
   def create
     @activity = Activity.new(activity_params)
+    @activity.user_id = current_user.id
     @activity.save
     redirect_to activities_path
   end
