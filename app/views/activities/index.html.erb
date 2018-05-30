@@ -3,10 +3,14 @@
 </div>
 <div class="container">
 <div class="row">
+
+
+
 <% @activities.each do |activity| %>
 <div class="col-12">
 <div class="shadow bg-white rounded p-4 d-flex justify-content-between">
 <h2><%= activity.name %></h2>
+<%= activity.items_id %>
 <p><b><%= activity.created_at.strftime("%D") %></b></p>
 </div>
 </div>
